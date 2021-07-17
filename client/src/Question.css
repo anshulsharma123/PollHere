@@ -1,0 +1,11 @@
+.questionField
+{
+    width: 85%;
+    height: 90px;
+    border-radius: 7px;
+    border: 2px solid gray;
+    background-color: white;
+    font-size: 20px;
+    padding: 10px;
+    word-spacing: normal;
+}
