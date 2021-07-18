@@ -1,0 +1,17 @@
+.resultPoll{
+    width: 100%;
+    min-height: 70vh;
+    height: auto;
+    background-color:#f7f5fa;
+}
+.resultPollInside
+{
+    width: 60%;
+    height: auto;
+    min-height: 70vh;
+    margin:auto;
+    background-color: #f7f5fa;
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+}

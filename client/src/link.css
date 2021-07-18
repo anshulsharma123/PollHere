@@ -2,28 +2,50 @@
     width: 100%;
     min-height: 70vh;
     height: auto;
+    display: flex;
+    justify-items: center;
     background-color:#f7f5fa;
 }
 .link
 {
-    width: 50%;
+    width: 55%;
     height: 40%;
     margin:auto ;
+    border-radius: 10px;
     background-color: white;
 }
 .linkDiv
 {
-    width: 90%;
+    width: 94%;
     height: 40px;
-    background-color: red;
+    background-color:#EDF2F7;
     margin: auto;
-    border-radius: 5px;
-    margin-bottom: 5%;
+    margin-top: 3%;
+    border-radius: 3px;
+    margin-bottom: 3%;
+}
+.adminLinkDiv
+{
+    width: 94%;
+    height: 40px;
+    background-color:#EDF2F7;
+    margin: auto;
+    margin-top: 3%;
+    border-radius: 3px;
+    margin-bottom: 3%;
 }
 .link h4
 {
-    padding-left: 5%;
-    padding-top: 5%;
+    padding-left: 3%;
+    padding-top: 3%;
+    margin: 0;
+}
+.link h5
+{
+    padding-left: 3%;
+    padding-top: 2%;
+    margin: 0;
+    color: #ed8936;
 }
 .line
 {
@@ -31,4 +53,40 @@
     height: 0px;
     margin: auto;
     border-top: 1px solid black;
+}
+.buttonDiv
+{
+    width: 100%;
+    height: 50px;
+    background-color:#EDF2F7;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.bottomlink
+{
+    width: 30%;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+}
+.bottomlink2
+{
+    width: 20%;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+}
+.bottomlink h4
+{
+   color: #4299E1;
+}
+.bottomlink2 h4
+{
+   color: #4299E1;
+}
+.linkDiv h4
+{
+    text-align: center;
 }

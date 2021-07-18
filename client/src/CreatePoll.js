@@ -2,14 +2,23 @@ import "./createPoll.css";
 import Question from "./Question";
 import Option from "./Options";
 import {useState} from "react";
-function CreatePoll()
+import axios from "axios";
+import { useHistory } from "react-router-dom";
+function CreatePoll(props)
 {
+    let history = useHistory();
     const [QuestionData, setQuestionData]=useState("");
     const [OptionsData, setOptionsData]=useState([{id:"1", value:""},{id:"2", value:""}]);
-    function getData()
+    function postData()
     {
-       console.log(QuestionData);
-       console.log(OptionsData);
+        let Data={Question:QuestionData, OptionData:OptionsData};
+        axios.post("http://localhost:7000/api/poll/data", Data)
+        .then(res => {
+            props.linkData(res.data._id);
+            //console.log(res.data._id);
+            history.push("/link");
+        })
+        .catch(err => console.log(err.data))
     }
     function addMoreOption()
     {   
@@ -35,8 +44,11 @@ function CreatePoll()
     }
     function deleteOptionData(id)
     {
-        const filteredData = OptionsData.filter((item) => item.id !== id);
-        setOptionsData([...filteredData])
+        if(OptionsData.length>2)
+        {
+            const filteredData = OptionsData.filter((item) => item.id !== id);
+             setOptionsData([...filteredData])
+        }
     }
     return (
         <>
@@ -48,11 +60,11 @@ function CreatePoll()
                  </div>
                  <Question onChange={onChangeData}/>
                  {OptionsData.map((data,index)=>{
-                     return <Option options={data} indexData={index} onChange={changeOptionData} onDelete={deleteOptionData}/>
+                     return <Option options={data} indexData={index} onChange={changeOptionData} onDelete={deleteOptionData} len={OptionsData.length}/>
                  })}
                  <button className="AddButton" onClick={addMoreOption}>Add another Option</button>
                  <hr></hr>
-                 <button className="DeleteButton" onClick={getData}>Create Poll</button>
+                 <button className="createButton" onClick={postData}>Create Poll</button>
               </div>
           </div>
           

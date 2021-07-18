@@ -17,9 +17,8 @@ function Option(props)
           <div className=''>
             <h4>{`Option ${props.indexData+1}`}</h4>
             <input className="option" placeholder={`Add option ${props.indexData+1}`} onChange={OptionData} value={props.options.value}></input>
-            <button onClick={deleteOption}>delete</button>
-            {/* <i className="fa fa-trash-o"></i> */}
-            {/* <i className="fa fa-trash-o DeleteButton"></i> */}
+            <button  className={props.len<=2?"disable":"undefined"} onClick={deleteOption}>delete</button>
+            {/* <i className="fas fa-trash"></i> */}
           </div>
         </>
     )
