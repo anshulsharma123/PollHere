@@ -1,4 +1,4 @@
-import "./Question.css"
+import "../cssFile/Question.css"
 function Question(props)
 {
     function onChangeHandler(event)

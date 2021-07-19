@@ -31,6 +31,7 @@
     background-color:#EDF2F7;
     margin: auto;
     margin-top: 3%;
+    text-align: center;
     border-radius: 3px;
     margin-bottom: 3%;
 }
@@ -39,6 +40,15 @@
     padding-left: 3%;
     padding-top: 3%;
     margin: 0;
+    /* padding: 10px; */
+}
+.linkDiv .votelink
+{
+    padding: 10px;
+}
+.adminLinkDiv .votelink
+{
+    padding: 10px;
 }
 .link h5
 {

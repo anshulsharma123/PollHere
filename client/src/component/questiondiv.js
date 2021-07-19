@@ -1,4 +1,4 @@
-import "./questiondiv.css";
+import "../cssFile/questiondiv.css";
 function QuestionDiv(props)
 {
      return (

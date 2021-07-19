@@ -1,0 +1,28 @@
+.votePoll{
+    width: 100%;
+    min-height: 70vh;
+    height: auto;
+    background-color:#f7f5fa;
+    padding: 20px;
+}
+.votePollInside
+{
+    width: 60%;
+    height: auto;
+    min-height: 70vh;
+    margin:auto;
+    background-color: #f7f5fa;
+}
+.submitButton
+{
+   width: 200px;
+   height: 50px;
+   background-color:#68d391;
+   margin-top: 20px;
+   border: none;
+   border-radius: 5px;
+   padding:10px;
+   font-weight: 700;
+   color: white;
+   font-size: 15px;
+}

@@ -1,0 +1,36 @@
+.option
+{
+    width: 85%;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid gray;
+    font-size: 20px;
+    padding: 10px;
+}
+.disable
+{
+    display: none;
+}
+.delete
+{
+    background-color: white;
+    border: none;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color:#68d391;
+}
+input:focus
+{
+    outline: none !important;
+    border: gray;
+    border-color: 2px solid#2a9df4;;
+    box-shadow: 0 0 10px #2a9df4;
+}
+textarea:focus
+{
+    outline: none !important;
+    border: gray;
+    border-color: 2px solid#2a9df4;;
+    box-shadow: 0 0 10px #2a9df4;
+}

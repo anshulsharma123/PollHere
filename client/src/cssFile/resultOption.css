@@ -1,20 +1,8 @@
-.question
-{
-    width: 70%;
-    min-height: 80px;
-    height: auto;
-    /* background-color: greenyellow; */
-}
-.question h1
-{
-    padding:20px;
-    padding-left: 25px;
-}
 .optionMain
 {
     width: 70%;
     height: auto;
-    min-height: 100px;
+    min-height: 80px;
     background-color: white;
     border-radius: 10px;
     margin: 10px;

@@ -1,14 +1,15 @@
-import "./result.css";
+import "./cssFile/result.css";
 import {useParams} from "react-router-dom";
-import QuestionDiv from "../src/questiondiv";
-import ResultOption from "../src/resultOptioon";
+import QuestionDiv from "./component/questiondiv";
+import ResultOption from "./component/resultOptioon";
 import axios from "axios";
 import { useEffect, useState } from "react";
 function Result()
 {
     let id= useParams();
     const [question , setQuestion]=useState("");
-    const [total, setTotal]=useState(0);
+    const [total, setTotal]=useState(parseInt(0));
+    let totals=0;
     const [options,setOptions]=useState([]);
     function mountData(data)
     {
@@ -16,9 +17,10 @@ function Result()
         setQuestion(data.data.Question);
         for(let i=0; i<data.data.Options.length; i++)
         {
-            setTotal(total+parseInt(data.data.Options[i].vote));
+            totals+=parseInt(data.data.Options[i].vote);
+            setTotal(totals)
         }
-        //console.log(data.data.Options.vote);
+
     }
     useEffect(async()=>{
         const data= await axios.get(`http://localhost:7000/api/poll/result/${id.id}`);

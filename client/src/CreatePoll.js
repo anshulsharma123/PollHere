@@ -1,6 +1,6 @@
-import "./createPoll.css";
-import Question from "./Question";
-import Option from "./Options";
+import "./cssFile/createPoll.css";
+import Question from "./component/Question";
+import Option from "./component/Options";
 import {useState} from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
@@ -15,7 +15,6 @@ function CreatePoll(props)
         axios.post("http://localhost:7000/api/poll/data", Data)
         .then(res => {
             props.linkData(res.data._id);
-            //console.log(res.data._id);
             history.push("/link");
         })
         .catch(err => console.log(err.data))

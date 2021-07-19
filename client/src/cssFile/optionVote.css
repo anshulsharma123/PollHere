@@ -1,0 +1,52 @@
+.optionVote
+{
+    width: 70%;
+    height: auto;
+    min-height: 80px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+    display: flex;
+    padding: 10px;
+}
+
+.roundVote
+{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color:#f7f5fa;
+    margin: 20px;
+}
+.optionVoteClick
+{
+    width: 70%;
+    height: auto;
+    min-height: 80px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+    display: flex;
+    padding: 10px;
+    /* box-shadow: 10px 10px 10px 5px#2a9df4; */
+}
+.roundVoteClick
+{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color:#2a9df4;
+    margin: 20px;
+}
+.optionMainVote:hover 
+{
+    width: 70%;
+    height: auto;
+    min-height: 80px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+    display: flex;
+    padding: 10px;
+    box-shadow: 5px 5px 5px 2px white;
+}
