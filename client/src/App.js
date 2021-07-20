@@ -5,8 +5,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Nav from "../src/component/nav";
 import Result from "../src/result";
 import React, { Component, Fragment } from 'react';
-import Link from "../src/component/link";
+import Link from "./link";
 import VotePage from '../src/votepage';
+import { ToastProvider } from 'react-toast-notifications';
 function App() {
   const [link, setLink]= useState("");
   const [resultLink,setResultLink]=useState("");
@@ -21,6 +22,7 @@ function App() {
   }
   return (
     <>
+     <ToastProvider>
     <Router>
         <Fragment>
             <Nav/>
@@ -32,6 +34,7 @@ function App() {
             </Switch>
         </Fragment>
     </Router>
+    </ToastProvider>
     </>
   );
 }

@@ -5,8 +5,10 @@ import { useParams , useHistory } from "react-router-dom";
 import axios from "axios";
 import OptionVote from "./component/optionVote";
 import QuestionDiv from "./component/questiondiv";
+import { useToasts } from 'react-toast-notifications'
 function VotePage(props)
 {
+    const { addToast } = useToasts()
     let id= useParams();
     let history = useHistory();
     const [selectId, setSelectId]= useState(0);
@@ -18,10 +20,21 @@ function VotePage(props)
             pollId:id.id,
             optionId:selectId,
         }
+        if(selectId==0)
+        {
+            addToast("Select atleast one option", {
+                appearance: 'error',
+                autoDismiss: true,
+            })
+            return;
+        }
         axios.put(`http://localhost:7000/api/poll/vote`, Data)
         .then(res => {
-           // props.linkResultData(id.id);
-           console.log("yes");
+            localStorage.setItem(`${Data.pollId}`, Data.optionId);
+            addToast("Your vote is successful submited", {
+                appearance: 'success',
+                autoDismiss: true,
+            })
             history.push(`/result/${id.id}`);
         })
         .catch(err => console.log(err))
@@ -32,8 +45,16 @@ function VotePage(props)
         setQuestion(data.data.Question);
     }
     useEffect(async()=>{
-        const data= await axios.get(`http://localhost:7000/api/poll/result/${id.id}`);
-        mountData(data);
+        let value=localStorage.getItem(id.id);
+        if(value)
+        {
+            history.push(`/result/${id.id}`);
+        }
+        else
+        {
+            const data= await axios.get(`http://localhost:7000/api/poll/result/${id.id}`);
+            mountData(data);
+        }
     },[])
     return (
         <>

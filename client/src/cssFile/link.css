@@ -4,6 +4,7 @@
     height: auto;
     display: flex;
     justify-items: center;
+    flex-wrap: wrap;
     background-color:#f7f5fa;
 }
 .link
@@ -23,6 +24,7 @@
     margin-top: 3%;
     border-radius: 3px;
     margin-bottom: 3%;
+    overflow: hidden;
 }
 .adminLinkDiv
 {
@@ -34,6 +36,7 @@
     text-align: center;
     border-radius: 3px;
     margin-bottom: 3%;
+    overflow: hidden;
 }
 .link h4
 {
@@ -99,4 +102,13 @@
 .linkDiv h4
 {
     text-align: center;
+}
+.qrCode
+{
+    width: auto;
+    height:40%;
+    background-color: white;
+    border-radius: 20px;
+    margin: auto;
+    padding: auto;
 }

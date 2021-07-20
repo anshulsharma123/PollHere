@@ -8,7 +8,7 @@ function Question(props)
     return (
         <div className="">
            <h4>Poll Question</h4>
-           <textarea className="questionField" placeholder="Type your Poll Title here" onChange={onChangeHandler}></textarea>
+           <textarea className="questionField" placeholder="Type your Poll Title here" onChange={onChangeHandler} required></textarea>
         </div>
     )
 }

@@ -21,7 +21,6 @@ route.post('/data', async (req, res) => {
      {
           poll.Options.push(options[i]);
      }
-     console.log(poll);
      const createPoll = await poll.save();
      res.status(200).send(createPoll);
 });

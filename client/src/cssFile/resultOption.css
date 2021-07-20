@@ -5,15 +5,19 @@
     min-height: 80px;
     background-color: white;
     border-radius: 10px;
-    margin: 10px;
+    margin: 5px;
 }
 .optionHeading
 {
-    padding: 10px;
+    padding: 5px;
     height: auto;
 }
 .display
 {
     display: flex;
     justify-content: space-between;
+}
+.optionHeading h4
+{
+    color:#2a9df4;
 }

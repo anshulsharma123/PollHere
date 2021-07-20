@@ -4,17 +4,44 @@ import Option from "./component/Options";
 import {useState} from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { useToasts } from 'react-toast-notifications'
 function CreatePoll(props)
 {
+    const { addToast } = useToasts()
     let history = useHistory();
     const [QuestionData, setQuestionData]=useState("");
     const [OptionsData, setOptionsData]=useState([{id:"1", value:""},{id:"2", value:""}]);
     function postData()
     {
         let Data={Question:QuestionData, OptionData:OptionsData};
+        Data.Question=Data.Question.trim();
+        for(let i=0; i<Data.OptionData.length; i++)
+        {
+            Data.OptionData[i].value=Data.OptionData[i].value.trim();
+            if(Data.OptionData[i].value.length==0)
+            {
+                addToast("No field can be empty", {
+                    appearance: 'error',
+                    autoDismiss: true,
+                })
+                return;
+            }
+        }
+        if(Data.Question.length==0)
+        {
+            addToast("No field can be empty", {
+                appearance: 'error',
+                autoDismiss: true,
+            })
+            return;
+        }
         axios.post("http://localhost:7000/api/poll/data", Data)
         .then(res => {
             props.linkData(res.data._id);
+            addToast("Poll created", {
+                appearance: 'success',
+                autoDismiss: true,
+            })
             history.push("/link");
         })
         .catch(err => console.log(err.data))

@@ -16,11 +16,11 @@ function ResultOption(props)
                       <h2>{props.option}</h2>
                   </div>
                   <div className="optionHeading">
-                     <h2>{`${per}%`}</h2>
+                     <h3>{`${per}%`}</h3>
                  </div>
               </div>
               <div className="optionHeading">
-                  <h2>{`${props.vote} vote`}</h2>
+                  <h4>{`${props.vote} vote`}</h4>
               </div>
           </div>
 
