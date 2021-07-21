@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 require('dotenv').config()
 var cors = require('cors')
+const port=process.env.port;
 
 app.use(cors())
 //db connection
@@ -9,7 +10,6 @@ require('./startup/db')();
 
 //routes 
 require("./startup/routes")(app);
-const port=process.env.port;
 app.listen(port, ()=>{
     console.log(`listening on port ${port}`)
 });

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 module.exports = function () {
   mongoose
-    .connect(process.env.DataBase||'mongodb://localhost:27017/PollHere', {
+    .connect('mongodb://localhost:27017/PollHere', {
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true,
