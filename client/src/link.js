@@ -48,9 +48,9 @@ function LinkPage(props)
                     copyToClipBoardResult(`localhost:3000/result/${props.value}`);
                  }}><h4 className="votelink">{'Click Here To Copy Link for Voting '}</h4></div>
                  <div className="buttonDiv">
-                     <div className="bottomlink"><Link to={`result/${props.value}`}><h4>Visit result page</h4></Link></div>
+                     <div className="bottomlink"><Link to={`result/${props.value}`} className="underLine"><h4>Visit result page</h4></Link></div>
                      <div></div>
-                     <div className="bottomlink2"><Link to={`/vote/${props.value}`}><h4>Visit voting page</h4></Link></div>
+                     <div className="bottomlink2"><Link to={`/vote/${props.value}`} className="underLine"><h4>Visit voting page</h4></Link></div>
                  </div>
              </div>
              <div className="qrCode"><QRCode value={`http://localhost:3000/vote/${props.value}`} /></div>
