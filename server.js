@@ -5,6 +5,10 @@ var cors = require('cors')
 
 app.use(cors())
 //db connection
+const port=process.env.port||7000;
+app.listen(port, ()=>{
+    console.log(`listening on port ${port}`)
+});
 require('./startup/db')();
 
 //routes 
@@ -17,7 +21,3 @@ if(process.env.NODE_ENV==="production")
         res.sendFile(path.resolve(__dirname,"client","build","index.html"));
     })
 }
-const port=process.env.port||7000;
-app.listen(port, ()=>{
-    console.log(`listening on port ${port}`)
-});
