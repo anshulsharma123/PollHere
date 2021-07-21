@@ -9,14 +9,14 @@ require('./startup/db')();
 
 //routes 
 require("./startup/routes")(app);
-// const port=process.env.port||7000;
-// app.listen(port, ()=>{
-//     console.log(`listening on port ${port}`)
-// });
-app.listen(process.env.PORT || 7000, process.env.HOST || '::', err => {
-    if (err) throw err
-    console.log(`server listening on ${app.server.address().port}`)
-})
+const port=process.env.port||8000;
+app.listen(port, ()=>{
+    console.log(`listening on port ${port}`)
+});
+// app.listen(process.env.PORT || 7000, process.env.HOST || '::', err => {
+//     if (err) throw err
+//     console.log(`server listening on ${app.server.address().port}`)
+// })
 if(process.env.NODE_ENV==="production")
 {
     app.use(express.static("client/build"));
