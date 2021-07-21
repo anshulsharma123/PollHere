@@ -6,7 +6,7 @@ const port=process.env.PORT||8080;
 
 app.use(cors())
 //db connection
-// require('./startup/db')();
+require('./startup/db')();
 
 //routes 
 require("./startup/routes")(app);
