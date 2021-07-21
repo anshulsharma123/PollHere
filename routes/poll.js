@@ -12,7 +12,6 @@ route.post('/data', async (req, res) => {
           }
           options.push(data);
      }
-     console.log(req.body.Question);
      const poll = new Poll({
          Question:req.body.Question,
          OptionData:options
@@ -21,8 +20,14 @@ route.post('/data', async (req, res) => {
      {
           poll.Options.push(options[i]);
      }
-     const createPoll = await poll.save();
-     res.status(200).send(createPoll);
+     try{
+          const createPoll = await poll.save();
+          res.status(200).send(createPoll);
+     }
+     catch(e)
+     {
+          res.status(400).send("error");
+     }
 });
 
 route.put('/vote', async (req, res) => {
@@ -32,9 +37,15 @@ route.put('/vote', async (req, res) => {
 });
 
 route.get('/result/:id', async (req,res)=>{
-   const poll = await Poll.findById(req.params.id);
-   if(!poll) return res.status(400).send("NO poll found");
-   res.status(200).send(poll);
+   try{
+     const poll = await Poll.findById(req.params.id);
+     if(!poll) return res.status(400).send("NO poll found");
+     res.status(200).send(poll);
+   }
+   catch(e)
+   {
+        res.status(400).send("error");
+   }
 });
 
 module.exports = route;

@@ -28,6 +28,8 @@
     margin: 20px;
     display: flex;
     padding: 10px;
+    margin-left: 30px;
+    border: 3px solid #2a9df4;
     /* box-shadow: 10px 10px 10px 5px#2a9df4; */
 }
 .roundVoteClick

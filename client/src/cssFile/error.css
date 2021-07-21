@@ -1,0 +1,13 @@
+.errorPageMain{
+    width: 100%;
+    min-height: 70vh;
+    height: auto;
+    background-color:#f7f5fa;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+}
+.errorPageMain h1
+{
+    margin-top: 150px;
+}

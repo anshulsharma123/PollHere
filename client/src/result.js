@@ -1,13 +1,14 @@
 import "./cssFile/result.css";
-import {useParams} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 import QuestionDiv from "./component/questiondiv";
 import ResultOption from "./component/resultOptioon";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import QRCode from "react-qr-code";
 function Result()
 {
     let id= useParams();
+    console.log(id);
+    let history = useHistory();
     const [question , setQuestion]=useState("");
     const [total, setTotal]=useState(parseInt(0));
     let totals=0;
@@ -28,8 +29,18 @@ function Result()
         }
     }
     useEffect(async()=>{
-        const data= await axios.get(`http://localhost:7000/api/poll/result/${id.id}`);
-        mountData(data);
+        if(id.id===":id")
+        {
+            history.push("/error");
+        }
+        try{
+            const data= await axios.get(`http://localhost:7000/api/poll/result/${id.id}`);
+            mountData(data);
+        }
+        catch(e)
+        {
+            history.push("/error");
+        }
     },[])
     return (
         <>

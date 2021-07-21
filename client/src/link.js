@@ -1,7 +1,8 @@
 import "../src/cssFile/link.css"
 import QRCode from "react-qr-code";
 import { useToasts } from 'react-toast-notifications'
-function Link(props)
+import {Link} from "react-router-dom";
+function LinkPage(props)
 {
   const { addToast } = useToasts()
   const copyToClipBoard = async copyMe => {
@@ -41,15 +42,15 @@ function Link(props)
                  copyToClipBoard(`localhost:3000/vote/${props.value}`);
                  }}><h4 className="votelink">{'Click Here To Copy Link for Voting '}</h4></div>
                  <div className="line"></div>
-                 <h4>The admin link to manage your poll is</h4>
+                 <h4>The Result link to see your poll result</h4>
                  <h5>Don't share this link with your participants</h5>
                  <div className="adminLinkDiv" onClick={()=>{
                     copyToClipBoardResult(`localhost:3000/result/${props.value}`);
                  }}><h4 className="votelink">{'Click Here To Copy Link for Voting '}</h4></div>
                  <div className="buttonDiv">
-                     <div className="bottomlink"><h4>Visit admin page</h4></div>
+                     <div className="bottomlink"><Link to={`result/${props.value}`}><h4>Visit result page</h4></Link></div>
                      <div></div>
-                     <div className="bottomlink2"><h4>Visit your poll</h4></div>
+                     <div className="bottomlink2"><Link to={`/vote/${props.value}`}><h4>Visit voting page</h4></Link></div>
                  </div>
              </div>
              <div className="qrCode"><QRCode value={`http://localhost:3000/vote/${props.value}`} /></div>
@@ -58,4 +59,4 @@ function Link(props)
     )
 }
 
-export default Link;
+export default LinkPage;

@@ -52,8 +52,19 @@ function VotePage(props)
         }
         else
         {
-            const data= await axios.get(`http://localhost:7000/api/poll/result/${id.id}`);
-            mountData(data);
+            if(id.id===":id")
+            {
+                history.push("/error");
+            }
+            try
+            {
+                const data= await axios.get(`http://localhost:7000/api/poll/result/${id.id}`);
+                mountData(data);
+            }
+            catch(e)
+            {
+                history.push("/error");
+            }
         }
     },[])
     return (
